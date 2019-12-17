@@ -1,3 +1,3 @@
-const coalesce = (...args) => args.reduce((a, b) => a || b);
+const coalesce = (...args) => args.reduce((a, b) => a || b)
 
-module.exports = { coalesce };
+module.exports = { coalesce }

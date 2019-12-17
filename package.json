@@ -4,19 +4,22 @@
   "description": "coalesce returns the first non falsy value, inspired by the coalesce SQL function",
   "main": "coalesce.js",
   "scripts": {
-    "cover": "NODE_ENV=test istanbul cover -x '*test.js' _mocha -- -R spec",
-    "check-coverage": "istanbul check-coverage --statements 100 --branches 100 --functions 100 --lines 100",
-    "check-lint": "eslint *.js lib/*.js test/*.js routes/*.js",
-    "fix-lint": "eslint --fix *.js lib/*.js test/*.js routes/*.js",
+    "cover": "LOG_LEVEL=trace nyc -x test --reporter=lcov --reporter=text mocha test --recursive",
+    "check-coverage": "nyc check-coverage --statements 100 --branches 100 --functions 100 --lines 100",
+    "check-lint": "standard *.js lib/*.js test/*.js routes/*.js",
+    "fix-lint": "standard --fix *.js lib/*.js test/*.js routes/*.js",
     "test": "mocha"
+  },
+  "standard":{
+    "env": ["mocha"]
   },
   "directories": {
     "test": "test"
   },
   "devDependencies": {
     "chai": "^4.2.0",
-    "istanbul": "^0.4.5",
-    "mocha": "^6.2.2"
+    "mocha": "^6.2.2",
+    "nyc": "^14.1.1"
   },
   "repository": {
     "type": "git",
