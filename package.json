@@ -1,6 +1,6 @@
 {
   "name": "coalesce",
-  "version": "1.0.0",
+  "version": "1.1.0",
   "description": "coalesce returns the first non falsy value, inspired by the coalesce SQL function",
   "main": "coalesce.js",
   "scripts": {
@@ -10,8 +10,10 @@
     "fix-lint": "standard --fix *.js lib/*.js test/*.js routes/*.js",
     "test": "mocha"
   },
-  "standard":{
-    "env": ["mocha"]
+  "standard": {
+    "env": [
+      "mocha"
+    ]
   },
   "directories": {
     "test": "test"
